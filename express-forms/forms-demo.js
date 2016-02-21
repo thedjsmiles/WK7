@@ -17,6 +17,18 @@ app.get('/show-data',function(req,res){
   res.render('show-data', context);
 });
 
+app.get('/get-loopback',function(req,res){
+  var qParams = "";
+  for (var p in req.query){
+    qParams += "The name " + p + " contains the value " + req.query[p] + ", ";
+  }
+  qParams = qParams.substring(0,qParams.lastIndexOf(','));
+  qParams += '.';
+  var context = {};
+  context.dataList = qParams;
+  res.render('get-loopback', context);
+});
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
