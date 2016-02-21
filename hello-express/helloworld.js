@@ -7,6 +7,7 @@ app.set('port', 3000);
 app.get('/',function(req,res){
   res.type('text/plain');
   res.send('Welcome to the main page!');
+  res.send(Math.random());
 });
 
 app.get('/other-page',function(req,res){
