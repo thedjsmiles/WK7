@@ -15,6 +15,16 @@ app.get('/other-page',function(req,res){
   res.render('other-page');
 });
 
+function genContext(){
+  var stuffToDisplay = {};
+  stuffToDisplay.time = (new Date(Date.now())).toLocaleTimeString('en-US');
+  return stuffToDisplay;
+}
+
+app.get('/time',function(req,res){
+  res.render('time', genContext());
+});
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
