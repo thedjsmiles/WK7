@@ -53,7 +53,7 @@ app.post('/post-loopback', function(req,res){
   var context = {};
   context.dataList = qParams;
   res.render('post-loopback', context);
-});
+}); 
 
 app.use(function(req,res){
   res.status(404);
