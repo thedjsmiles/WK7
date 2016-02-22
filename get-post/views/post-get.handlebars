@@ -1,0 +1,19 @@
+<link href="style.css" rel="stylesheet">
+{{#if getList}}
+<h2>GET Request Recieved:</h2>
+<ul>
+	{{#each getList}}
+		<li class="output">{{this.name}}: {{this.value}}
+	{{/each}}
+</ul>
+
+{{/if}}
+{{#if postList}}
+<h2>POST Request Recieved:</h2>
+<ul>
+	{{#each postList}}
+		<li class="output">{{this.name}}: {{this.value}}
+	{{/each}}
+</ul>
+
+{{/if}}
