@@ -49,6 +49,7 @@ app.post('/post-loopback', function(req,res){
     qParams.push({'name':p,'value':req.body[p]})
   }
   console.log(qParams);
+  console.log(req.query);
   console.log(req.body);
   var context = {};
   context.dataList = qParams;
